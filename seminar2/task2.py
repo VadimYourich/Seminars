@@ -7,7 +7,10 @@ print('Введите 2 целых числа, чтобы А > B')
 a = int(input('A = '))
 b = int(input('B = '))
 
-while a >= b:
-    a -= (a - 1) % 2
-    print(a)
-    a -= 2
+# while a >= b:
+#     a -= (a - 1) % 2
+#     print(a)
+#     a -= 2
+
+for i in range(a - (a - 1) % 2, b - 1, -2):
+    print(i)
