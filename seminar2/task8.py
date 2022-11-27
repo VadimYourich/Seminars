@@ -7,12 +7,21 @@
 # Выходные данные
 # 5.666666666666667
 
+# print('Вводите числа, по окончанию введите 0: ')
+# n = None
+# sum = 0
+# count = 0
+# while n != 0:
+#     n = int(input())
+#     count += 1
+#     sum += n
+# print(sum / (count - 1))
+
+
 print('Вводите числа, по окончанию введите 0: ')
 n = None
-sum = 0
-count = 0
+sp = []
 while n != 0:
     n = int(input())
-    count += 1
-    sum += n
-print(sum / (count - 1))
+    sp.append(n)
+print(round(sum(sp) / (len(sp) - 1), 2))
