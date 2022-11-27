@@ -10,10 +10,16 @@
 # 36
 # 49
 
+# n = int(input('Введите N: '))
+#
+# for i in range(1, n):
+#     if i ** 2 < n:
+#         print(i ** 2, end=', ')
+#     else:
+#         break
+
+
 n = int(input('Введите N: '))
 
-for i in range(1, n):
-    if i ** 2 < n:
+for i in range(1, int(n ** 0.5) + 1):
         print(i ** 2, end=', ')
-    else:
-        break
