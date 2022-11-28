@@ -12,6 +12,7 @@ i = 0
 while i < len(n1):
     if n1[i:i + len(n2)] == n2:
         count += 1
-        i += (len(n2) - 1)
-    i += 1
+        i += len(n2)
+    else:
+        i += 1
 print(count)
