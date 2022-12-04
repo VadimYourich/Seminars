@@ -28,3 +28,7 @@ print()
 for el in sp:
     print(el, end=' ')
 print(*sp)
+
+sp1 = [1, 5, 3]
+sp2 = sp1.copy() #копия списка
+sp2 = sp1[:] #срез всего списка, получается копия списка
