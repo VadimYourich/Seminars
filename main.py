@@ -33,10 +33,26 @@ sp1 = [1, 5, 3]
 sp2 = sp1.copy() #копия списка
 sp2 = sp1[:] #срез всего списка, получается копия списка
 
+# проверка на полиндром
+# n = input('Введите число ')
+# n2 = n[::-1]
+# if n2 == n:
+#     print('Палиндром')
+# else:
+#     print('Не палиндром')
 
-n = input('Введите число ')
-n2 = n[::-1]
-if n2 == n:
-    print('Палиндром')
-else:
-    print('Не палиндром')
+# заполнение списка с консоли
+# print('Вводите числа, по окончанию введите 0: ')
+# n = None
+# list = []
+# while n != 0:
+#     n = int(input())
+#     list.append(n)
+# print(list)
+
+# счётчик элементов списка
+# new_list = []
+# for i in list:
+#      if list.count(i) == 1:
+#          new_list.append(i)
+# print(new_list)
