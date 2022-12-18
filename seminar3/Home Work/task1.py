@@ -5,8 +5,11 @@
 #
 # - [2, 3, 5, 9, 3] -> на нечётных позициях элементы 3 и 9, ответ: 12
 
+# list = [2, 3, 5, 9, 3, 9, 5]
+# sum = 0
+# for i in range(1, len(list) - 1, 2):
+#     sum += list[i]
+# print(sum)
+
 list = [2, 3, 5, 9, 3, 9, 5]
-sum = 0
-for i in range(1, len(list) - 1, 2):
-    sum += list[i]
-print(sum)
+print(sum(list[1::2]))
