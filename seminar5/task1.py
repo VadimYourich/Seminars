@@ -8,4 +8,6 @@ a = date.read().split()
 a = list(map(int, a))
 print(a)
 date.close()
-#for i in range
+for i in range(1, len(a)):
+    if a[i] != a[i - 1] + 1:
+        print(a[i - 1] + 1)
