@@ -80,7 +80,7 @@ sp2 = sp1[:] #срез всего списка, получается копия 
 
 # sp = [1, 2, 3, 4, 5]
 # res = list(map(kvadrat, sp))
-res = list(map(lambda a: a ** 2, sp))
+# res = list(map(lambda a: a ** 2, sp))
 # print(res)
 
 # Сортировка
