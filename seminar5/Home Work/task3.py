@@ -1,130 +1,46 @@
 # 3.	Создайте программу для игры в "Крестики-нолики".
 
-def print_m(mat):
-    print(' ' + '_' * 20)
-    print('|' + ' ' * 6 + '|' + ' ' * 6 + '|' + ' ' * 6 + '|')
-    print('|', end='')
-    print(*mat[0], sep='|', end='')
-    print('|')
-    print('|' + '_' * 6 + '|' + '_' * 6 + '|' + '_' * 6 + '|')
-    print('|' + ' ' * 6 + '|' + ' ' * 6 + '|' + ' ' * 6 + '|')
-    print('|', end='')
-    print(*mat[1], sep='|', end='')
-    print('|')
-    print('|' + '_' * 6 + '|' + '_' * 6 + '|' + '_' * 6 + '|')
-    print('|' + ' ' * 6 + '|' + ' ' * 6 + '|' + ' ' * 6 + '|')
-    print('|', end='')
-    print(*mat[2], sep='|', end='')
-    print('|')
-    print('|' + ' ' * 6 + '|' + ' ' * 6 + '|' + ' ' * 6 + '|')
-    print(' ' + '‾' * 20)
-
-def step_m(mat, x, znak):
-    f = False
-    while not f:
-        if x == 1:
-            if ('   X  ' not in mat[0][0]) and ('   O  ' not in mat[0][0]):
-                mat[0][0] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 2:
-            if ('   X  ' not in mat[0][1]) and ('   O  ' not in mat[0][1]):
-                mat[0][1] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 3:
-            if ('   X  ' not in mat[0][2]) and ('   O  ' not in mat[0][2]):
-                mat[0][2] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 4:
-            if ('   X  ' not in mat[1][0]) and ('   O  ' not in mat[1][0]):
-                mat[1][0] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 5:
-            if ('   X  ' not in mat[1][1]) and ('   O  ' not in mat[1][1]):
-                mat[1][1] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 6:
-            if ('   X  ' not in mat[1][2]) and ('   O  ' not in mat[1][2]):
-                mat[1][2] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 7:
-            if ('   X  ' not in mat[2][0]) and ('   O  ' not in mat[2][0]):
-                mat[2][0] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 8:
-            if ('   X  ' not in mat[2][1]) and ('   O  ' not in mat[2][1]):
-                mat[2][1] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-        if x == 9:
-            if ('   X  ' not in mat[2][2]) and ('   O  ' not in mat[2][2]):
-                mat[2][2] = znak
-                f = True
-            else:
-                print('Некорректный ход!')
-                x = int(input('введите номер позиции для хода: '))
-    return mat
-
-
-def victory(sp):
-    flag = False
-    if sp[0][0] == sp[1][1] == sp[2][2] or \
-            sp[2][0] == sp[1][1] == sp[0][2] or \
-            sp[0][0] == sp[1][0] == sp[2][0] or \
-            sp[0][1] == sp[1][1] == sp[2][1] or \
-            sp[0][2] == sp[1][2] == sp[2][2] or \
-            sp[0][0] == sp[0][1] == sp[0][2] or \
-            sp[1][0] == sp[1][1] == sp[1][2] or \
-            sp[2][0] == sp[2][1] == sp[2][2]:
-        flag = True
-    return flag
-
-
-sp = [['   1  ', '   2  ', '   3  '], ['   4  ', '   5  ', '   6  '], ['   7  ', '   8  ', '   9  ']]
-print_m(sp)
-
-count = 0
-znak = True
-while not victory(sp):
-    if count <= 8:
-        step = int(input('введите номер позиции для хода: '))
-        if znak:
-            sp = step_m(sp, step, '   X  ')
-            print_m(sp)
-            znak = not znak
-            count += 1
-        else:
-            print_m(step_m(sp, step, '   O  '))
-            znak = not znak
-            count += 1
-    else:
-        print('Ничья!')
-        break
-
-if victory(sp):
-    if znak:
-        print('Победили нолики - О')
-    else:
-        print('Победили крестики - Х')
+def print_field(field, field_numbers):
+    for i in range(len(field)):
+        print(field[i], end='\t')
+        print(field_numbers[i])
+def check_win(field):
+    if any(i[0] == i[1] == i[2] != '-' for i in field):
+        return True
+    if any(a == b == c != '-' for a, b, c in zip(*field)):
+        return True
+    if field[0][0] == field[1][1] == field[2][2] != '-' or field[2][0] == field[1][1] == field[0][2] != '-':
+        return True
+    return False
+def draw(field):
+    if all(i[0] and i[1] and i[2] != '-' for i in field):
+        return True
+    return False
+if __name__ == '__main__':
+    field = [['-'] * 3 for _ in range(3)]
+    field_numbers = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    positions = {1: (0, 0), 2: (0, 1), 3: (0, 2),
+                 4: (1, 0), 5: (1, 1), 6: (1, 2),
+                 7: (2, 0), 8: (2, 1), 9: (2, 2),}
+    get_pos = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    wins = {0: "X", 1: '0'}
+    print('Начало игры')
+    hod = 0
+    while True:
+        print_field(field, field_numbers)
+        print(f'Ход {wins[hod]}')
+        inp = int(input(f'Выберите позицию: {get_pos} : '))
+        while inp not in get_pos:
+            inp = int(input(f'Выберите правильную позицию: {get_pos} : '))
+        x, y = positions[inp]
+        get_pos.remove(inp)
+        field[x][y] = wins[hod]
+        if check_win(field):
+            print(f'Выйграл {wins[hod]}')
+            print('Конец игры')
+            break
+        if draw(field):
+            print('Ничья')
+            print('Конец игры')
+            break
+        hod = (hod + 1) % 2
