@@ -1,8 +1,8 @@
 # Напишите программу, удаляющую из текста все слова, содержащие ""абв"".
 # [‘ПРИВЕТ’, ‘ЗАБВЕНИЕ’, 'ПОКА’] ->[‘ПРИВЕТ’, 'ПОКА’]
 
-sp = ['ПРИВЕТ', 'ЗАБВЕНИЕ', 'ПОКА']
+sp = input().split()
 
-sp = list(filter(lambda x:'АБВ' not in x, sp))
+sp = list(filter(lambda x:'abc' not in x, sp))
 
-print(sp)
+print(' '.join(sp))
