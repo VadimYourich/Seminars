@@ -1,7 +1,7 @@
-a: int = 0 # int
-b = 'tdfg' # str
-c = 0.5 # float
-t = True # bool
+# a: int = 0 # int
+# b = 'tdfg' # str
+# c = 0.5 # float
+# t = True # bool
 #
 # for i in range(5):
 #     print('Мама')
@@ -18,20 +18,20 @@ t = True # bool
 # sp.append(5)
 # sp.append(8)
 # print(sp)
-sp = [1, 5, 3, 89, 3]
-# print(sp[0])
-# print(sp[3])
-# print(sp[-1])
-for i in range(0, len(sp)):
-    print(sp[i], end=' ')
-# print()
-for el in sp:
-    print(el, end=' ')
-# print(*sp)
+# sp = [1, 5, 3, 89, 3]
+# # print(sp[0])
+# # print(sp[3])
+# # print(sp[-1])
+# for i in range(0, len(sp)):
+#     print(sp[i], end=' ')
+# # print()
+# for el in sp:
+#     print(el, end=' ')
+# # print(*sp)
 
-sp1 = [1, 5, 3]
-sp2 = sp1.copy() #копия списка
-sp2 = sp1[:] #срез всего списка, получается копия списка
+# sp1 = [1, 5, 3]
+# sp2 = sp1.copy() #копия списка
+# sp2 = sp1[:] #срез всего списка, получается копия списка
 
 # проверка на полиндром
 # n = input('Введите число ')
@@ -84,18 +84,24 @@ sp2 = sp1[:] #срез всего списка, получается копия 
 # print(res)
 
 # Сортировка
-sp = ['rrr', 'z', 'tyjuuu', 'aaaaaaaaaaa']
-sp.sort(key=lambda a: -len(a))
-sp.sort(key=lambda a: len(a), reverse=True)
+# sp = ['rrr', 'z', 'tyjuuu', 'aaaaaaaaaaa']
+# sp.sort(key=lambda a: -len(a))
+# sp.sort(key=lambda a: len(a), reverse=True)
 # print(sp)
-
-sp = [['a', 66], ['b', 66], ['c', 1], ['d', 1]]
-sp.sort(key=lambda x: (-x[1], x[0]))
+#
+# sp = [['a', 66], ['b', 66], ['c', 1], ['d', 1]]
+# sp.sort(key=lambda x: (-x[1], x[0]))
 # print(sp)
 
 # Списочные выражения
-sp = [i * 10 for i in range(1, 100) if i % 4 == 0]
+# sp = [i * 10 for i in range(1, 100) if i % 4 == 0]
 # print(sp)
 
-a, b, c = [int(i) for i in input("Введите значения A,B,C: ").split()]
+# a, b, c = [int(i) for i in input("Введите значения A,B,C: ").split()]
 #print(a + b + c)
+
+# функция работает с двумя списками
+sp1 = [1, 2, 3, 4, 5, 6]
+sp2 = [10, 20, 30, 40, 33]
+for i, j in zip(sp1, sp2):
+    print(i, j)
