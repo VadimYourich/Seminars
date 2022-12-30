@@ -5,3 +5,6 @@
 #               *
 #               **********
 #               ********
+num = input('Вводи числа через пробел: ').split()
+for i in range(len(num)):
+    print('*' * int(num[i]))
