@@ -9,3 +9,11 @@
 #           пять
 #           шесть
 #           четыре
+
+string = []
+num = int(input('Введите число строк: '))
+for i in range(num):
+    st = input(f'Введите {i+1} строку: ')
+    string.append(st)
+string.sort(key=lambda x: len(x))
+print(*string, sep='\n')
