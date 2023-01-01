@@ -51,6 +51,7 @@
 # print(list)
 
 # счётчик элементов списка
+# list = [2, 3, 4, 5, 6, 5]
 # new_list = []
 # for i in list:
 #      if list.count(i) == 1:
@@ -100,13 +101,13 @@
 # a, b, c = [int(i) for i in input("Введите значения A,B,C: ").split()]
 #print(a + b + c)
 
-# функция работает с двумя списками
+# функция работает с двумя списками, объединяет по-элементно и обрезает по длине меньшего списка
 # sp1 = [1, 2, 3, 4, 5, 6]
 # sp2 = [10, 20, 30, 40, 33]
 # for i, j in zip(sp1, sp2):
 #     print(i, j)
 
 # функция для нумерования элементов списка
-sp = ['a', 'b', 'c']
-for i, el in enumerate(sp, 1):
-    print(i, el)
+# sp = ['a', 'b', 'c']
+# for i, el in enumerate(sp, 1):
+#     print(i, el)
