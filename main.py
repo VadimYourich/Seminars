@@ -111,3 +111,19 @@
 # sp = ['a', 'b', 'c']
 # for i, el in enumerate(sp, 1):
 #     print(i, el)
+
+#работа с форматом csv
+# import csv
+#
+##чтение с файла
+# lst = []
+# with open("file.csv", encoding='utf-8') as r_file:
+# reader_object = csv.reader(r_file, delimiter=";")  #delimiter - разделитель
+# for row in reader_object:
+# lst.append(row)
+#
+##запись в файл
+# with open("classmates.csv", mode="w", encoding='utf-8') as w_file:
+# file_writer = csv.writer(w_file, delimiter = ",", lineterminator="\r")   #lineterminator - удаляет пустые строки
+# for row in lst:
+# file_writer.writerow(row)
