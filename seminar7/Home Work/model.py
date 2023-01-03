@@ -1,5 +1,9 @@
 import csv
 
+# def reading_txt_file():
+#     with open('file.txt', encoding='utf-8') as r_file:
+#         data = r_file.read()
+#     return data
 
 def reading_txt_file():
     with open('file.txt', 'r', encoding='utf-8') as data:
@@ -31,6 +35,11 @@ def reading_csv_file():
     with open('file.csv', encoding='utf8') as data:
         reader = csv.DictReader(data, delimiter=',')
         return list(reader)
+
+# def record_txt(data):
+#     with open('record.txt', 'w', encoding='utf-8') as w_file:
+#         for s in data:
+#             w_file.write('\n'.join(s) + '\n\n')
 
 
 def record_txt(data):
