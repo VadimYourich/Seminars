@@ -23,15 +23,14 @@ def show_employees(spisok):
 
 
 def add_employee():
-    print("\nВведите Фамилию Имя Телефон и должность через пробел: ")
+    print("\nВведите Фамилию, Имя, телефон и должность через пробел: ")
     data = input().split()
     return data
 
 
 def change_employee():
     change = int(input("\nВыберите номер строки для перезаписи: "))
-    print("Новая строка - Фамилию Имя Телефон и должность через пробел: ")
-    string = input("Введите строку для записи: ").split()
+    string = input("Введите Фамилию, Имя, телефон и должность через пробел: ").split()
     return change, string
 
 

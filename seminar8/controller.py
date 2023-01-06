@@ -26,7 +26,7 @@ def main():
         change, string = view.change_employee()
         print(change, string)
         models.update_employee(change, string)
-        logging.warning(f"Данные сотрудника изменены. Номер записи - {change}.")
+        logging.warning(f"Данные сотрудника {change} изменены.")
     elif select == 4:
         logging.warning("\nВыбрана четвёртая команда.")
         number = view.delete_employee()
