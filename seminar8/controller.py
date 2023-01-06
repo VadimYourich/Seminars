@@ -45,10 +45,10 @@ def main():
         view.res_export(exp, numbers)
     elif select == 7:
         logging.info("\nВыбрана седьмая команда.")
-        number = view.employee()
-        sotrudnik = models.read_employee(number)
-        view.print_employee(sotrudnik)
-        logging.info(f"Выведены данные {number} сотрудника.")
+        numbers = view.employee()
+        numbers, spisok, read_num = models.read_employee(numbers)
+        view.print_employee(numbers, spisok, read_num)
+        logging.info(f"Выведены данные {numbers} сотрудника.")
     else:
         print("\nНеверная команда!")
     logging.info("Программа выполнена корректно!")

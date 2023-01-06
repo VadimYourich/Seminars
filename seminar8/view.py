@@ -3,7 +3,7 @@ def show_menu():
     print("Команды информационной системы: \n1 - показать всех сотрудников\n"
           "2 - добавить сотрудника\n3 - изменить данные сотрудника\n4 - удалить сотрудника\n"
           "5 - импорт сотрудников из файла\n6 - экспорт выбранных сотрудников в файл\n"
-          "7 - показать сотрудника")
+          "7 - показать сотрудников")
     try:
         select = int(input("    Выберите команду: "))
         if not select in [1, 2, 3, 4, 5, 6, 7]:
@@ -55,18 +55,27 @@ def res_export(exp, numbers):
         exp = [str(i) for i in exp]
         print(f"Выполнен экспорт сотрудников с номерами записей: {', '.join(exp)}.")
     else:
-        print("Не были переданы номера строк присутствующие в базе.")
+        print("Не были переданы номера строк, присутствующих в файле.")
     if len(numbers) != 0:
         numbers = [str(i) for i in numbers]
-        print(f"Номера: {', '.join(numbers)}, в базе отсутствуют.")
+        print(f"Номера: {', '.join(numbers)}, в файле отсутствуют.")
 
 
 def employee():
-    number = int(input("\nВведите номер строки сотрудника: "))
-    return number
+    print("\nВведите через пробел номера сотрудников для вывода на экран: ", end='')
+    numbers = [int(n) for n in input().split()]
+    return numbers
 
 
-def print_employee(sotrudnik):
-    print("\nДанные указанного сотрудника:")
-    print(sotrudnik)
-
+def print_employee(numbers, spisok, read_num):
+    if len(read_num) != 0:
+        print()
+        for i in spisok:
+            print(*i, end='\n')
+        read_num = [str(i) for i in read_num]
+        print(f"\nВыполнен вывод на экран сотрудников с номерами записей: {', '.join(read_num)}.")
+    else:
+        print("Не были переданы номера строк, присутствующих в файле.")
+    if len(numbers) != 0:
+        numbers = [str(i) for i in numbers]
+        print(f"Номер(а): {', '.join(numbers)}, в файле отсутствуют(ет).")

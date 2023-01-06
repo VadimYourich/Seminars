@@ -86,13 +86,16 @@ def export_employees_file(numbers):
     return ex
 
 
-def read_employee(number):
-    try:
-        with open('file.csv', 'r', encoding="utf-8", newline='') as csvfile:
-            reader = csv.reader(csvfile, delimiter=';')
-            data = list(reader)
-            sotrudnik = ', '.join(data[number])
-            return sotrudnik
-    except IndexError:
-        print(f"Запись с номером {number} отсутствует в файле.")
-        exit()
+def read_employee(numbers):
+    spisok = []
+    read_num = []
+    with open('file.csv', 'r', encoding="utf-8", newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+        data = list(reader)
+        for i, sotrudnik in enumerate(data):
+            if i in numbers:
+                spisok.append(sotrudnik)
+                read_num.append(i)
+                numbers.remove(i)
+    return numbers, spisok, read_num
+
