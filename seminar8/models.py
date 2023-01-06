@@ -84,3 +84,15 @@ def export_employees_file(numbers):
         for i in exp:
             writer.writerow(i)
     return ex
+
+
+def read_employee(number):
+    try:
+        with open('file.csv', 'r', encoding="utf-8", newline='') as csvfile:
+            reader = csv.reader(csvfile, delimiter=';')
+            data = list(reader)
+            sotrudnik = ', '.join(data[number])
+            return sotrudnik
+    except IndexError:
+        print(f"Запись с номером {number} отсутствует в файле.")
+        exit()

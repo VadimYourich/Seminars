@@ -35,14 +35,20 @@ def main():
     elif select == 5:
         logging.info("\nВыбрана пятая команда.")
         count = models.import_exployees_file()
-        logging.warning("Успешный импорт сотрудников из файла.")
+        logging.info("Успешный импорт сотрудников из файла.")
         view.res_import(count)
     elif select == 6:
         logging.info("\nВыбрана шестая команда.")
         numbers = view.export_employees()
         exp = models.export_employees_file(numbers)
-        logging.warning(f"Выполнен экспорт сотрудников в файл.")
+        logging.info(f"Выполнен экспорт сотрудников в файл.")
         view.res_export(exp, numbers)
+    elif select == 7:
+        logging.info("\nВыбрана седьмая команда.")
+        number = view.employee()
+        sotrudnik = models.read_employee(number)
+        view.print_employee(sotrudnik)
+        logging.info(f"Выведены данные {number} сотрудника.")
     else:
         print("\nНеверная команда!")
     logging.info("Программа выполнена корректно!")

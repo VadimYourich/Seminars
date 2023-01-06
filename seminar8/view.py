@@ -2,10 +2,11 @@
 def show_menu():
     print("Команды информационной системы: \n1 - показать всех сотрудников\n"
           "2 - добавить сотрудника\n3 - изменить данные сотрудника\n4 - удалить сотрудника\n"
-          "5 - импорт сотрудников из файла\n6 - экспорт выбранных сотрудников в файл")
+          "5 - импорт сотрудников из файла\n6 - экспорт выбранных сотрудников в файл\n"
+          "7 - показать сотрудника")
     try:
         select = int(input("    Выберите команду: "))
-        if not select in [1, 2, 3, 4, 5, 6]:
+        if not select in [1, 2, 3, 4, 5, 6, 7]:
             raise ValueError
         return select
     except Exception:
@@ -50,13 +51,22 @@ def export_employees():
 
 
 def res_export(exp, numbers):
-    if len(exp) !=0:
+    if len(exp) != 0:
         exp = [str(i) for i in exp]
         print(f"Выполнен экспорт сотрудников с номерами записей: {', '.join(exp)}.")
     else:
         print("Не были переданы номера строк присутствующие в базе.")
     if len(numbers) != 0:
         numbers = [str(i) for i in numbers]
-        print(f"Такие номера: {', '.join(numbers)} в базе отсутствуют.")
+        print(f"Номера: {', '.join(numbers)}, в базе отсутствуют.")
 
+
+def employee():
+    number = int(input("\nВведите номер строки сотрудника: "))
+    return number
+
+
+def print_employee(sotrudnik):
+    print("\nДанные указанного сотрудника:")
+    print(sotrudnik)
 
