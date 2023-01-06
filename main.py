@@ -127,3 +127,25 @@
 # file_writer = csv.writer(w_file, delimiter = ",", lineterminator="\r")   #lineterminator - удаляет пустые строки
 # for row in lst:
 # file_writer.writerow(row)
+
+# #запись логов в файл
+# import logging
+# logging.basicConfig (filename='log.txt',
+#                     filemode='a',
+#                     format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+#                     datefmt='%H:%M:%S',
+#                     level=logging.DEBUG, encoding="UTF-8")
+
+# #обработка ошибок
+# try:
+#     select = int(input("    Выберите команду: "))
+#     if not select in [1, 2, 3, 4, 5, 6, 7]:
+#         raise ValueError
+#     return select
+# except Exception:
+#     print("\nВведена неверная команда!")
+#     exit()
+
+# #ввод через пробел
+# print("\nВведите через пробел номера сотрудников для вывода на экран: ", end='')
+# numbers = [int(n) for n in input().split()]
