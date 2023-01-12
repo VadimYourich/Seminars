@@ -39,7 +39,7 @@ def conv(update, context):
 def converter(update, context):
     try:
         value = int(update.message.text)
-        update.message.reply_text(f'Ответ = {value * 1000}')
+        update.message.reply_text(f'Ответ = {value * 1000}г.')
         return ConversationHandler.END
     except Exception as exp:
         update.message.reply_text(f'Введите целое число')

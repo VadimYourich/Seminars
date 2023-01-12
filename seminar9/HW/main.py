@@ -48,11 +48,6 @@ def showall(update, context):
     return 1
 
 
-# def showallFunc(update, context):
-#     value = db_view(db_f)
-#     update.message.reply_text(f'Ответ = \n{value}')
-#     return ConversationHandler.END
-
 def showallFunc(update, context):
     value = db_view(db_f)
     update.message.reply_text('Ответ = \n')
