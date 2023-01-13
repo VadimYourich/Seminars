@@ -1,0 +1,42 @@
+# https://habr.com/ru/post/321510/
+
+import sqlite3
+
+conn = sqlite3.connect('students.db')
+cursor = conn.cursor()
+
+# РїРѕРєР°Р·Р°С‚СЊ РІСЃРµС… СЃС‚СѓРґРµРЅС‚РѕРІ
+cursor.execute("select * from students")
+results = cursor.fetchall()
+print(results)
+
+# РїРѕРёСЃРє Р·Р°РїРёСЃРё
+surname = 'РРІР°РЅРѕРІ'
+cursor.execute(f"select * from students where surname like '%{surname}%'")
+results = cursor.fetchall()
+print(results)
+
+# РґРѕР±Р°РІРёС‚СЊ СЃС‚СѓРґРµРЅС‚Р°
+name = 'РЎС‚РµРїР°РЅ'
+surname = 'РЎС‚РµРїР°РЅРѕРІ'
+phone = 45648
+description = 'РРЅР¶РµРЅРµСЂ'
+cursor.execute(
+    f"insert into students (name, surname, phone, description) "
+    f"values ('{name}', '{surname}', {phone}, '{description}')")
+conn.commit()
+
+# СѓРґР°Р»РёС‚СЊ СЃС‚СѓРґРµРЅС‚Р°
+id = 5
+cursor.execute(
+    f"delete from students where id={id}"
+)
+conn.commit()
+
+# РѕР±РЅРѕРІРёС‚СЊ РґР°РЅРЅС‹Рµ Рѕ СЃС‚СѓРґРµРЅС‚Рµ
+id = 3
+cursor.execute(
+    f"update students set name='Р®СЂРёР№' where id={id}"
+)
+conn.commit()
+conn.close()
