@@ -79,7 +79,7 @@ def play_step(update, context):
             return ConversationHandler.END
         else:
             if candies % (step + 1) == 0:
-                rand = randint(1, candies)
+                rand = randint(1, step)
                 candies -= rand
                 update.message.reply_text(f"Я беру {rand} конфет. Остаётся {candies}. Судя по всему, ты выйграешь!",
                                           reply_markup=markup2)
