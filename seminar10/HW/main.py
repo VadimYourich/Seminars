@@ -61,7 +61,7 @@ def set_settings(update, context):
 
 def play(update, context):
     update.message.reply_text(f"На кону {candies} конфет. Ваш ход. Какое количество конфет вы берете?"
-                              f"(Доступно {step} конфет)", reply_markup=markup2)
+                              f"(Максимум - {step} конфет)", reply_markup=markup2)
     return 1
 
 
